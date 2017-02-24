@@ -1,0 +1,21 @@
+<!doctype html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+function search(x) {
+  $.post("/search", {"key": x}, function (data) {
+    $("#results").text(data)
+});
+};
+</script>
+</head>
+<html>
+<body>
+<h1>Hello, world.</h1>
+<h2 id="results"></h2>
+<input id="insearch" type="text">
+<button onclick="search(document.getElementById('insearch').value)">
+  Submit!
+</button>
+</body>
+</html>
